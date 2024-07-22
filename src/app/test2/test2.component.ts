@@ -4,14 +4,8 @@ import {Component} from '@angular/core';
   selector: 'app-test2',
   standalone: true,
   imports: [],
-  template: `
-    <h1 class="title1">TEST2222</h1>
-  `,
-  styles: [`
-      .title1 {
-          color: red;
-      }
-  `]
+  templateUrl: './test2.component.html',
+  styleUrls: ['./test2.component.scss']
 
 })
 export class Test2Component {

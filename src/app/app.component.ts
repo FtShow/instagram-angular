@@ -8,7 +8,7 @@ import {Test2Component} from "./test2/test2.component";
   standalone: true,
   imports: [RouterOutlet, Test1Component, Test2Component],
   templateUrl: './app.component.html',
-  styleUrl: 'app.component.css'
+  styleUrl: 'app.component.scss'
 })
 export class AppComponent {
   title = 'instagram-angular';
