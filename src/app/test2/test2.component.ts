@@ -1,11 +1,18 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-test2',
   standalone: true,
   imports: [],
-  templateUrl: './test2.component.html',
-  styleUrl: './test2.component.css'
+  template: `
+    <h1 class="title1">TEST2222</h1>
+  `,
+  styles: [`
+      .title1 {
+          color: red;
+      }
+  `]
+
 })
 export class Test2Component {
 
