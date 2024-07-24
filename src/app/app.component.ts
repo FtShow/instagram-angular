@@ -22,4 +22,11 @@ export class AppComponent {
     name: 'Ivan',
   }
   isAppLoading = true
+  text = ''
+
+  changeTitle() {}
+
+  changeText(event: Event) {
+    this.appTitle = (event.currentTarget as HTMLInputElement).value
+  }
 }

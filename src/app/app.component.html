@@ -2,7 +2,8 @@
   <h1>{{ appTitle }}</h1>
   <h1>{{ user.age }}</h1>
   <h1>{{ user.name }}</h1>
-  <button [disabled]="isAppLoading">BTN</button>
+  <input type="text" (keyup.enter)="changeText($event)" />
+  <button [disabled]="!isAppLoading" (click)="changeTitle()">BTN</button>
 </div>
 <inst-test1 />
 <inst-test2 />
