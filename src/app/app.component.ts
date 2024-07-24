@@ -2,6 +2,7 @@ import { Component } from '@angular/core'
 import { RouterOutlet } from '@angular/router'
 import { Test1Component } from './test1/test1.component'
 import { Test2Component } from './test2/test2.component'
+import { FormsModule } from '@angular/forms'
 
 type iUser = {
   age: number
@@ -11,7 +12,7 @@ type iUser = {
 @Component({
   selector: 'inst-root',
   standalone: true,
-  imports: [RouterOutlet, Test1Component, Test2Component],
+  imports: [RouterOutlet, FormsModule, Test1Component, Test2Component],
   templateUrl: './app.component.html',
   styleUrl: 'app.component.scss',
 })
@@ -21,12 +22,5 @@ export class AppComponent {
     age: 32,
     name: 'Ivan',
   }
-  isAppLoading = true
   text = ''
-
-  changeTitle() {}
-
-  changeText(event: Event) {
-    this.appTitle = (event.currentTarget as HTMLInputElement).value
-  }
 }
