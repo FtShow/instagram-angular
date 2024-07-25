@@ -1,3 +1,6 @@
 <h1>Parent</h1>
 <div>{{ grades | json }}</div>
+<div *ngFor="let el of grades">
+  {{ el }}
+</div>
 <inst-child (senGradeEvent)="getGrade($event)" />

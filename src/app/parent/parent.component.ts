@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { ChildComponent, Grade } from './child/child.component'
-import { JsonPipe } from '@angular/common'
+import { JsonPipe, NgForOf } from '@angular/common'
 
 export interface Address {
   city: string
@@ -11,7 +11,7 @@ export interface Address {
 @Component({
   selector: 'inst-parent',
   standalone: true,
-  imports: [ChildComponent, JsonPipe],
+  imports: [ChildComponent, JsonPipe, NgForOf],
   templateUrl: './parent.component.html',
   styleUrl: './parent.component.scss',
 })
