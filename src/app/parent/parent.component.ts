@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'
-import { ChildComponent } from './child/child.component'
+import { ChildComponent, Grade } from './child/child.component'
+import { JsonPipe } from '@angular/common'
 
 export interface Address {
   city: string
@@ -10,21 +11,14 @@ export interface Address {
 @Component({
   selector: 'inst-parent',
   standalone: true,
-  imports: [ChildComponent],
+  imports: [ChildComponent, JsonPipe],
   templateUrl: './parent.component.html',
   styleUrl: './parent.component.scss',
 })
 export class ParentComponent {
-  name = 'Ivan'
-  surname = 'Parent'
-  address: Address = {
-    city: 'Moscow',
-    street: 'Street',
-    home: 49,
-  }
-  old?: number
+  grades: string[] = ['math: 5', 'eng: 2']
 
-  parentFunc(e: number) {
-    this.old = e
+  getGrade(grade: string) {
+    this.grades.push(grade)
   }
 }

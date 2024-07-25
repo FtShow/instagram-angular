@@ -1,22 +1,28 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core'
-import { Address } from '../parent.component'
+import { Component, EventEmitter, Output } from '@angular/core'
+import { FormsModule } from '@angular/forms'
+
+export interface Grade {
+  math: number
+  physic: number
+}
 
 @Component({
   selector: 'inst-child',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './child.component.html',
   styleUrl: './child.component.scss',
 })
 export class ChildComponent {
   name = 'Serega'
-  @Input() surnameProps?: string
-  @Input() address?: Address
+  inputGrade = ''
 
-  @Output() outChild = new EventEmitter<number>()
+  changeParentTitle() {}
 
-  childFunc() {
-    const old = 33
-    this.outChild.emit(old)
+  @Output() senGradeEvent = new EventEmitter<string>()
+
+  senGrade() {
+    this.senGradeEvent.emit(this.inputGrade)
+    this.inputGrade = ''
   }
 }
