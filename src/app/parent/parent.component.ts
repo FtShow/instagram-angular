@@ -22,4 +22,9 @@ export class ParentComponent {
     street: 'Street',
     home: 49,
   }
+  old?: number
+
+  parentFunc(e: number) {
+    this.old = e
+  }
 }

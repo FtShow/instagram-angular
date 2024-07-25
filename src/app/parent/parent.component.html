@@ -1,2 +1,3 @@
 <h1>{{ name }} {{ surname }}</h1>
-<inst-child [surnameProps]="surname" [address]="address" />
+<h2>{{ old }}</h2>
+<inst-child (outChild)="parentFunc($event)" [surnameProps]="surname" [address]="address" />
