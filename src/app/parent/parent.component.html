@@ -1,6 +1,11 @@
 <h1>Parent</h1>
-<div>{{ grades | json }}</div>
-<div *ngFor="let el of grades">
-  {{ el }}
+<!--<div *ngFor="let el of grades">-->
+<!--  {{ el }}-->
+<!--</div>-->
+<div *ngFor="let lesson of lessons">
+  <h3>{{ lesson.title }}</h3>
+  <ul *ngFor="let grade of lesson.weekGrades">
+    <li>{{ grade | json }}</li>
+  </ul>
 </div>
 <inst-child (senGradeEvent)="getGrade($event)" />
