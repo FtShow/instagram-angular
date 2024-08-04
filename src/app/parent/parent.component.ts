@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { ChildComponent, Grade } from './child/child.component'
-import { JsonPipe, NgForOf } from '@angular/common'
+import { JsonPipe, NgForOf, NgIf } from '@angular/common'
 
 export interface Address {
   city: string
@@ -22,11 +22,12 @@ export interface Lessons {
 @Component({
   selector: 'inst-parent',
   standalone: true,
-  imports: [ChildComponent, JsonPipe, NgForOf],
+  imports: [ChildComponent, JsonPipe, NgForOf, NgIf],
   templateUrl: './parent.component.html',
   styleUrl: './parent.component.scss',
 })
 export class ParentComponent {
+  isLoading = true
   lessons: Lessons[] = [
     {
       id: 0,
@@ -65,6 +66,12 @@ export class ParentComponent {
       ],
     },
   ]
+
+  constructor() {
+    setTimeout(() => {
+      this.isLoading = false
+    }, 3000)
+  }
 
   getGrade(grade: string) {
     console.log(grade)
