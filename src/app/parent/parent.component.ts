@@ -1,7 +1,8 @@
 import { Component } from '@angular/core'
 import { ChildComponent, Grade } from './child/child.component'
-import { JsonPipe, NgForOf, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common'
+import { JsonPipe, NgClass, NgForOf, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common'
 import { FormsModule } from '@angular/forms'
+import is = jasmine.is
 
 export interface Address {
   city: string
@@ -23,10 +24,19 @@ export interface Lessons {
 @Component({
   selector: 'inst-parent',
   standalone: true,
-  imports: [ChildComponent, JsonPipe, NgForOf, NgIf, FormsModule, NgSwitch, NgSwitchCase, NgSwitchDefault],
+  imports: [ChildComponent, JsonPipe, NgForOf, NgIf, FormsModule, NgSwitch, NgSwitchCase, NgSwitchDefault, NgClass],
   templateUrl: './parent.component.html',
   styleUrl: './parent.component.scss',
 })
 export class ParentComponent {
   value = ''
+  isSuccess = false
+
+  constructor() {
+    setInterval(() => {
+      this.isSuccess = !this.isSuccess
+    }, 1000)
+  }
+
+  protected readonly is = is
 }
