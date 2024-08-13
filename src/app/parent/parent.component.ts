@@ -1,8 +1,7 @@
 import { Component } from '@angular/core'
-import { ChildComponent, Grade } from './child/child.component'
+import { ChildComponent } from './child/child.component'
 import { JsonPipe, NgClass, NgForOf, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common'
 import { FormsModule } from '@angular/forms'
-import is = jasmine.is
 
 export interface Address {
   city: string
@@ -37,6 +36,4 @@ export class ParentComponent {
       this.isSuccess = !this.isSuccess
     }, 1000)
   }
-
-  protected readonly is = is
 }
