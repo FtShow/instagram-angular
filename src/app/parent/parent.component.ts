@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
 import { ChildComponent } from './child/child.component'
-import { JsonPipe, NgClass, NgForOf, NgIf, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common'
+import { JsonPipe, NgClass, NgForOf, NgIf, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common'
 import { FormsModule } from '@angular/forms'
 
 export interface Address {
@@ -23,7 +23,18 @@ export interface Lessons {
 @Component({
   selector: 'inst-parent',
   standalone: true,
-  imports: [ChildComponent, JsonPipe, NgForOf, NgIf, FormsModule, NgSwitch, NgSwitchCase, NgSwitchDefault, NgClass],
+  imports: [
+    ChildComponent,
+    JsonPipe,
+    NgForOf,
+    NgIf,
+    FormsModule,
+    NgSwitch,
+    NgSwitchCase,
+    NgSwitchDefault,
+    NgClass,
+    NgStyle,
+  ],
   templateUrl: './parent.component.html',
   styleUrl: './parent.component.scss',
 })
