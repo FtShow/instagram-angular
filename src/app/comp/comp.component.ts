@@ -12,12 +12,15 @@ export class CompComponent implements OnInit {
   vvv = 10
 
   addValueHandler() {
+    console.log('add')
     this.valueService.add()
   }
 
   constructor(private valueService: ValueService) {}
 
   ngOnInit(): void {
-    this.vvv = this.valueService.value
+    this.valueService.value$.subscribe(value => {
+      this.vvv = value
+    })
   }
 }

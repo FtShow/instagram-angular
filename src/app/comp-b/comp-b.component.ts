@@ -18,6 +18,8 @@ export class CompComponentB implements OnInit {
   constructor(private valueService: ValueService) {}
 
   ngOnInit(): void {
-    this.vvv = this.valueService.value
+    this.valueService.value$.subscribe(value => {
+      this.vvv = value
+    })
   }
 }

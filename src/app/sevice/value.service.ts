@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core'
+import { BehaviorSubject } from 'rxjs'
 
 @Injectable({
   providedIn: 'root',
 })
 export class ValueService {
-  value = 10
+  value$ = new BehaviorSubject<number>(3)
 
   add() {
-    this.value = this.value + 1
+    this.value$.next(this.value$.getValue() + 1)
   }
 
   dec() {
-    this.value = this.value - 1
+    this.value$.next(this.value$.getValue() - 1)
   }
 }
