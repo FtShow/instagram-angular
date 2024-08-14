@@ -2,17 +2,17 @@ import { Component, OnInit } from '@angular/core'
 import { ValueService } from '../sevice/value.service'
 
 @Component({
-  selector: 'inst-comp',
+  selector: 'inst-comp-b',
   standalone: true,
   imports: [],
-  templateUrl: './comp.component.html',
-  styleUrl: './comp.component.scss',
+  templateUrl: './comp-b.component.html',
+  styleUrl: './comp-b.component.scss',
 })
-export class CompComponent implements OnInit {
+export class CompComponentB implements OnInit {
   vvv = 10
 
-  addValueHandler() {
-    this.valueService.add()
+  decValueHandler() {
+    this.valueService.dec()
   }
 
   constructor(private valueService: ValueService) {}

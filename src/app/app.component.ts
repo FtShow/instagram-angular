@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router'
 
 import { FormsModule } from '@angular/forms'
 import { CompComponent } from './comp/comp.component'
-import { ValueService } from './sevice/value.service'
+import { CompComponentB } from './comp-b/comp-b.component'
 
 type iUser = {
   age: number
@@ -13,10 +13,9 @@ type iUser = {
 @Component({
   selector: 'inst-root',
   standalone: true,
-  imports: [RouterOutlet, FormsModule, CompComponent],
+  imports: [RouterOutlet, FormsModule, CompComponent, CompComponentB],
   templateUrl: './app.component.html',
   styleUrl: 'app.component.scss',
-  providers: [ValueService],
 })
 export class AppComponent {
   appTitle: string = 'instagram-angular'
