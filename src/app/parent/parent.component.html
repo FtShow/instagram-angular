@@ -1,1 +1,7 @@
-<h1 [ngStyle]="{ color: 'red' }">Lorem ipsum dolor sit amet.</h1>
+<div *ngFor="let item of fruits; let i = index">
+  <ng-template [ngIf]="item.price > 7">
+    <span [ngClass]="{ success: i % 2 === 0, error: i % 2 !== 0 }" *ngIf="item"
+      >{{ item.name }} <b>{{ item.price }}</b>
+    </span>
+  </ng-template>
+</div>
