@@ -1,6 +1,16 @@
 import { Component } from '@angular/core'
 import { ChildComponent } from './child/child.component'
-import { JsonPipe, NgClass, NgForOf, NgIf, NgStyle, NgSwitch, NgSwitchCase, NgSwitchDefault } from '@angular/common'
+import {
+  DatePipe,
+  JsonPipe,
+  NgClass,
+  NgForOf,
+  NgIf,
+  NgStyle,
+  NgSwitch,
+  NgSwitchCase,
+  NgSwitchDefault,
+} from '@angular/common'
 import { FormsModule } from '@angular/forms'
 
 export interface Address {
@@ -34,6 +44,7 @@ interface Fruit {
     NgSwitchDefault,
     NgClass,
     NgStyle,
+    DatePipe,
   ],
   templateUrl: './parent.component.html',
   styleUrl: './parent.component.scss',
@@ -50,4 +61,5 @@ export class ParentComponent {
     { id: '8', name: 'mangoes', price: 3 },
     { id: '9', name: 'kiwifruit', price: 7 },
   ]
+  date = new Date()
 }
